@@ -100,10 +100,10 @@ def draw():
     if mouseX < 60 and mouseY > 180 and mouseY < 180+30:
         noStroke()
         fill('#ff3399')
-        rect(0,200,60,30)
+        rect(0,170,60,30)
         
-    if mousePressed:
-        drawmode = 'free'
+        if mousePressed:
+            drawmode = 'free'
     
     if drawmode == 'free':
         fill('#ff99ff')
@@ -116,10 +116,10 @@ def draw():
     if mouseX < 60 and mouseY > 200 and mouseY < 220+30:
         noStroke()
         fill('#ff3399')
-        rect(0,170,60,30)
+        rect(0,200,60,30)
         
-    if mousePressed:
-        drawmode = 'line'
+        if mousePressed:
+            drawmode = 'line'
         
     if drawmode == 'line':
         fill('#ff99ff')
@@ -128,11 +128,48 @@ def draw():
         
     text('line', 10, 220)
     
+    #erase-mode
+    if mouseX < 60 and mouseY > 240 and mouseY < 240+30:
+        noStroke()
+        fill('#ff3399')
+        rect(0,230,60,30)
+        
+        if mousePressed:
+            drawmode = 'erase'
+    
+    if drawmode == 'erase':
+        fill('#ff99ff')
+        stroke('#004477')
+        if mouseButton == LEFT:
+            line(mouseX,mouseY,pmouseX,pmouseY)
+    else:
+        fill('#ffffff')
+        stroke(strokecolor)
+        
+    text('erase', 10, 250)
+    
+    #ellipse-mode
+    if mouseX < 60 and mouseY > 260 and mouseY < 260+30:
+        noStroke()
+        fill('#ff3399')
+        rect(0,260,60,30)
+        
+        if mousePressed:
+            drawmode = 'dots'
+        
+    if drawmode == 'dots': #won't work with squares
+        fill('#ff99ff')
+        for i in range(5):
+            point(random(width), random(height))
+    else:
+        fill('#ffffff')
+    text('dots', 10, 280)
+    
     #draw
     stroke(strokecolor)
     #indication of mouseclick/listen for when the left mouse button has been clicked
     #use print(mouseButton) to find the values or use keycodes
-    if mouseButton == LEFT and mouseX > 60 and drawmode == 'free':
+    if mouseButton == LEFT and mouseX > 60 and drawmode == 'free' and 'dots':
         line(mouseX,mouseY,pmouseX, pmouseY) #draw a line between the 1st frame & 2nd frame
         
 startx = None
