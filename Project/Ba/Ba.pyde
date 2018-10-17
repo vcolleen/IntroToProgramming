@@ -1,0 +1,16 @@
+size(800,800)
+background("#00000")
+fill("#f1b531")
+stroke("#d28b17")
+strokeWeight(0)
+ellipse(400,400,600,600)
+strokeWeight(10)
+
+beginShape()
+vertex(400,300)
+bezierVertex(0,500,200,600,400,500)
+vertex(400,500)
+bezierVertex(600,600,800,500,400,300)
+endShape()
+
+saveFrame()

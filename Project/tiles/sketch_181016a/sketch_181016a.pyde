@@ -1,0 +1,25 @@
+size(800,800)
+background("#000000")
+
+a = loadImage('A.tif')
+da = loadImage('DA.tif')
+ga = loadImage('GA.tif')
+ka = loadImage('KA.tif')
+ma = loadImage('MA.tif')
+nga = loadImage('NGA.tif')
+pa = loadImage('PA.tif')
+ta = loadImage('TA.tif')
+ya = loadImage('YA.tif')
+ba = loadImage('BA.tif')
+e = loadImage('E.tif')
+ha = loadImage('HA.tif')
+la = loadImage('LA.tif')
+na = loadImage('NA.tif')
+o = loadImage('O.tif')
+sa = loadImage('SA.tif')
+wa = loadImage('WA.tif')
+
+def placeTile(x, y, tilesize, tileimage):
+    img = loadImage(tileimage)
+    image(img, x*tilesize, y*tilesize, tilesize, tilesize)
+    
